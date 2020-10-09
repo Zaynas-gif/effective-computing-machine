@@ -52,3 +52,4 @@ function openHelp() {
     document.querySelector(".please").style.display = "block";
     document.querySelector(".welcome").innerHTML = null;
   }
+
