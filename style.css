@@ -163,8 +163,16 @@ header{
 }
 
 
+/* kontak info */
 
+.info-container {
+ display: none;
+}
 
+/* studyplan */
+#output {
+    display: none;
+}
 
 
 
@@ -703,15 +711,16 @@ caption {
     font-size: small;
     line-height: 12px;
     position: relative;
-    display: inline-block;
 }
 .info-container {
     width: 350px;
     height: auto;
+
 }
 .courselist-container {
     width: 60%;
     height: 450px;
+    display: inline-block;
 }
 .row-container {
     position: relative;
@@ -769,14 +778,8 @@ caption {
     height: 25px;
 }
 .korgcontainer {
-    display: inline-block;
-    position: absolute;
-    right: 5px;
     min-height: 300px;
     color: rgb(29, 29, 235);
-    border: 1px solid rgb(29, 29, 235);
-    border-radius: 10px;
-    width: 220px;
     text-align: left;
 }
 #korg {

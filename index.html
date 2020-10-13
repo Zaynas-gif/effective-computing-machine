@@ -14,7 +14,7 @@
             <div class="login">
                 <div class="please">Please log in</div>
                 <div class="welcome"></div>
-                <input class="login-input" type="text" placeholder="Your Name" id="login-id">
+                <input class="login-input" type="text" placeholder="Your ID" id="login-id">
                 <button class="logIn-btn" onclick="LogIn()">Log In</button>
                 <button class="logOut-btn" onclick="LogOut()">Log Out</button>
             </div>
@@ -41,14 +41,14 @@
                     <table id="korg">
                     </table>
                 </div>
-                <button class="loadinfo" onclick="courseselect('sva grund')">Course Info</button>
+              <!--  <button class="loadinfo" onclick="courseselect('sva grund')">Course Info</button> -->
             </div>
         <!---main body of the content *main body*-->
         <div class="main-content">
             <div style="display: block;" class="open"  id="StartdivClick" >
                 <h1>Välkommen</h1><br><h2>Söka vuxenutbildning i Helsingborg Inom den kommunala vuxenutbildningen kan du studera på olika nivåer med olika mål. Du kan läsa en hel utbildning eller läsa enstaka kurser.</h2>
                <p></p> Välj vilken utbildning/kurs du vill läsa i trädet till vänster. Klicka på krysset till vänster om rubrikerna.
- Känner du dig osäker på vad du ska söka? Kontaktuppgifter till våra studie- och yrkesvägledare på Helsingborgs lärcentrum hittar du <a href="#"> här</a></p>
+                     Känner du dig osäker på vad du ska söka? Kontaktuppgifter till våra studie- och yrkesvägledare på Helsingborgs lärcentrum hittar du <a href="#"> här</a></p>
              </div>
              <div style="display: none;" class="open"  id="EducatusClick">
                  <h3>SVA grundläggande / Eductus</h3>
@@ -611,7 +611,6 @@
                      
                  </div>
              </div>
-         </div>
          <div style="display: none;" class="open"  id="FranAnnankommunClick">
              <h3>Sökande från annan hemkommun</h3>
              <p>Är du folkbokförd i annan kommun än Helsingborg men vill läsa här?</p>
@@ -763,18 +762,18 @@
             
  
  
+        
              </div>
-         </div>
  
  
-     </div>
+            
 
 
 
-     <!-- study plan-->
-     <div id="output">
-        <h2><caption>Study Plan</caption></h2>
-        <table id ="table-coloring" class="table-layout">
+                  <!-- study plan-->
+              <div id="output">
+            <h2><caption>Study Plan</caption></h2>
+                 <table id ="table-coloring" class="table-layout">
             <caption>Application</caption>
             
             <tr>
@@ -789,8 +788,8 @@
                 <td>2020-01-23</td><td>true</td><td>Grade A</td><td>Job seeker</td>
                 <td>53, Working with: Data/IT, IT Consultant</td>
             </tr>
-        </table>
-        <table id ="table-coloring" class="table-layout">
+                  </table>
+                 <table id ="table-coloring" class="table-layout">
             <caption>Educations</caption>
             <tr>
                 <th>Unit</th><th>SF</th><th>Education Measure student</th><th>Priority</th><th>Skill</th><th>Program</th>
@@ -801,9 +800,9 @@
             <tr>
                 <td>2020-01-23</td><td>sf2</td><td>edu meas student2</td><td>Medium</td><td>skill2</td><td>program2</td>
             </tr>
-        </table>
+             </table>
 
-        <table id ="table-coloring" class="table-layout">
+             <table id ="table-coloring" class="table-layout">
             <caption>Educational Goals</caption>
             <tr>
                 <th>Goal of Education</th><th>Motivation</th><th>Other notes</th>
@@ -814,9 +813,9 @@
             <tr>
                 <td>Goal of Education2</td><td>motivation2</td><td>other notes2</td>
             </tr>
-        </table>
+             </table>
 
-        <table id ="table-coloring" class="table-layout">
+             <table id ="table-coloring" class="table-layout">
             <caption>Courses</caption>
             <tr>
                 <th>Info</th><th>Goal</th><th>Course Code</th><th>Course Title</th><th>Credit</th><th>Group</th><th>From-To</th>
@@ -834,8 +833,8 @@
                 <td>Info</td><td>Goal</td><td>PRRPRR02</td><td>Programming 2</td><td>100</td><td>KHPr PRRPRR02</td><td>200921-201025</td>
                 <td>0</td><td>200</td><td>100</td><td>t</td><td>201225</td><td>Opinion1</td>
             </tr>
-        </table>
-        <table id ="table-coloring" class="table-layout">
+             </table>
+            <table id ="table-coloring" class="table-layout">
             <caption>Summary of Points</caption>
             <tr>
                 <th>Period</th><th>FutureCoursePoints</th><th>CurrentPoints</th><th>InterruptedCoursePoints</th>
@@ -852,8 +851,8 @@
             <tr>
                 <th>Total</th><th>0</th><th>500</th><th>0</th>
             </tr>
-        </table>
-        <table id ="table-coloring" class="table-layout">
+          </table>
+            <table id ="table-coloring" class="table-layout">
             <caption>Career Guidance Information</caption>
             <tr>
                 <th>Order</th><th>Information</th><th>Answer</th><th>Date</th><th>Signature</th>
@@ -873,39 +872,10 @@
             <tr>
                 <td>5</td><td>The individual has declined the offer of study and career guidance</td><td>No</td><td>..</td><td>..</td>
             </tr>
-        </table>
-    </div>
+          </table>
+                 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <!-- landing page-->
-            <div class="Landing-content">
-                <h4>Substitut för BankID</h4>
-                <p>Detta är en placeholder som skall immitera BankIDs funktion.<br>
-                var god logga in uppe i höger hörn med ett av de IDs listade här under.<br>
-                <br>
-                ID : bla bla bla<br>
-                ID : bla bla bla<br>
-                ID : bla bla bla<br>
-                ID : bla bla bla<br>
-            </p>
-
-            </div>
-
-
-
-        <!---Komplettera body-->    
+         <!---Komplettera body-->    
             <div class="komplettera-content">
                 <ul class="breadcrumb">
                     <li><strong>Komplettera</strong></li>
@@ -1021,7 +991,7 @@
                 <p>(* - Obligatoriskt info)</p>
                 <p class="row-container">
                     <span class="label-container">Personnummer</span>
-                    <span class="text-container no-border" id="pers-id" type="text" value="">911111-1115</span>
+                    <span class="text-container no-border" id="pers-id" type="text" value=""></span>
                 </p>
                 <p class="row-container">
                     <span class="label-container">Förnamn</span>
@@ -1104,9 +1074,8 @@
 
 
 
-
-
         </div>
+
 
 
     </div>
