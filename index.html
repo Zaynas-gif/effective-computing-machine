@@ -836,97 +836,93 @@
             </div>
 
             <h4 id="tidutb">Tidigare utbildning</h4>
-                <div class="selectflex">
-                    <select class="Options" name="options" id="tidutb-sel" onchange="utbInput()">
-                        <option value="Välj">Välj</option>
-                        <option value="Utlänsk utbildning">Utlänsk utbildning</option>
-                        <option value="Svensk grundskola">Svensk grundskola</option>
-                        <option value="Svensk gymnasial utbildning 2 år eller kortare">Svensk gymnasial utbildning 2 år eller kortare</option>
-                        <option value="Svensk gymnasial utbildning längre än 2 år">Svensk gymnasial utbildning längre än 2 år</option>
-                        <option value="Svensk eftergymnasial utbildning">Svensk eftergymnasial utbildning</option>
-                    </select>
-                    <input type="text" placeholder="Antal år?" id="utb-input">
-                </div>
-
-                <h4 id="Nuvsys">Nuvarandra sysselsättning</h4>
-                <div class="selectflex">
-                    <select class="Options" name="options" id="sys-sel" onchange="nuvSysInput()">
-                        <option value="Välj">Välj</option>
-                        <option  value="Arbetar Heltid">Arbetar Heltid</option>
-                        <option  value="Arbetar Deltid">Arbetar Deltid</option>
-                        <option  value="Annat">Annat</option>
-                        <option  value="Arbetssökande">Arbetssökande</option>
-                        <option  value="Risk för arbetslös">Risk för arbetslös</option>
-                        <option  value="Studerar">Studerar</option>
-                    </select>
-                    <input type="text" placeholder="T.ex föräldraledig" id="annat-input">
-                    <input type="text" placeholder="Ange utbildning" id="stud-input">
-                </div>
-
-               <h4 id="tidutb">Utbildningssyfte</h4>
-               <div class="selectflex">
-                    <select class="Options" name="options" id="utbsys-sel" onchange="utbSysInput()">
-                    <option  value="Välj">Välj</option>
-                    <option  value="Prövning">Prövning</option>
-                    <option  value="Validera tidigare yrkeserfarenhet">Validera tidigare yrkeserfarenhet</option>
-                    <option  value="Att arbeta med: Administration, ekonomi, juridik">Att arbeta med: Administration, ekonomi, juridik</option>
-                    <option  value="Att arbeta med: Bygg och anläggning">Att arbeta med: Bygg och anläggning</option>
-                    <option  value="Att arbeta med: Data/IT">Att arbeta med: Data/IT</option>
-                    <option  value="Att arbeta med: Fordon och Transport">Att arbeta med: Fordon och Transport</option>
-                    <option  value="Att arbeta med: Försäljning och Handel">Att arbeta med: Försäljning och Handel</option>
-                    <option  value="Att arbeta med: Hantverk och tillverkning">Att arbeta med: Hantverk och tillverkning</option>
-                    <option  value="Att arbeta med: Hotell & Restaurang och kök">Att arbeta med: Hotell & Restaurang och kök</option>
-                    <option  value="Att arbeta med: Hälso- och sjukvård">Att arbeta med: Hälso- och sjukvård</option>
-                    <option  value="Att arbeta med: Kultur, media, design">Att arbeta med: Kultur, media, design</option>
-                    <option  value="Att arbeta med: Pedagogiskt arbete">Att arbeta med: Pedagogiskt arbete</option>
-                    <option  value="Att arbeta med: Socialt arbete">Att arbeta med: Socialt arbete</option>
-                    <option  value="Att arbeta med: Säkerhetsarbete">Att arbeta med: Säkerhetsarbete</option>
-                    <option  value="Att arbeta med: Tekniskt arbete">Att arbeta med: Tekniskt arbete</option>
-                    <option  value="Att arbeta med: Annat yrkesområde">Att arbeta med: Annat yrkesområde</option>
-                    </select>
-                    <input type="text" placeholder="Ange kurs/kurser" id="kurs-input">
-                    <input type="text" placeholder="Ange yrke" id="yrke-input">
-                </div>
-
-                <h4 id="tidutb">Studiemedel</h4>
-                <div class="selectflex">
-                    <select class="Options" name="options" id="stud-sel">
-                    <option  value="Välj">Välj</option>
-                    <option  value="Jag kommer att ansöka om studiemedel">Jag kommer att ansöka om studiemedel</option>
-                    <option  value="Jag kommer inte att ansöka om studiemedel">Jag kommer inte att ansöka om studiemedel</option>
-                    </select>
-                </div>
-
-                <h4 id="tidutb">Studietakt samt önskat startdatum</h4>
-                <div class="selectflex">
-                    <select class="Options" name="options" id="takt-sel">
-                    <option  value="Välj">Välj</option>
-                    <option  value="25%">25%</option>
-                    <option  value="50%">50%</option>
-                    <option  value="75%">75%</option>
-                    <option  value="100%">100%</option>
-                    </select>
-                    <div id="startdatum"></div>
-                </div>
-
-
-                <p><strong>Motivering</strong> - Varför vill du läsa just den här kursen eller utbildningen?</p>
-                <textarea name="comment"></textarea>
-
-                <p><strong>Särskilt stöd</strong> - Är du i behov av extra stöd i studier till exempel pga. läs- och skrivsvårigheter, dyskalkyli, koncentrationssvårigheter eller annan form ange det här.</p>
-                <textarea name="comment"></textarea>
-
-                <!-- <p><strong>Studietakt</strong> - Skriv önskat startdatum samt om du vill studera på 100, 75, 50 eller 25%.</p>
-                 <textarea name="comment"></textarea> -->
-
-                <p><strong>Utbildningsmål</strong> - Vad är ditt mål med studierna?</p>
-                <textarea name="comment"></textarea>
-
-                <button type="button" onclick="" id="kompl-nästa-btn">Nästa</button>
-
-
-
+            <div class="selectflex">
+                <select class="Options" name="options" id="tidutb-sel" onchange="utbInput()">
+                    <option value="Välj">Välj</option>
+                    <option value="Utlänsk utbildning">Utlänsk utbildning</option>
+                    <option value="Svensk grundskola">Svensk grundskola</option>
+                    <option value="Svensk gymnasial utbildning 2 år eller kortare">Svensk gymnasial utbildning 2 år eller kortare</option>
+                    <option value="Svensk gymnasial utbildning längre än 2 år">Svensk gymnasial utbildning längre än 2 år</option>
+                    <option value="Svensk eftergymnasial utbildning">Svensk eftergymnasial utbildning</option>
+                </select>
+                <input type="text" placeholder="Antal år?" id="utb-input">
             </div>
+
+            <h4 id="Nuvsys">Nuvarandra sysselsättning</h4>
+            <div class="selectflex">
+                <select class="Options" name="options" id="sys-sel" onchange="nuvSysInput()">
+                    <option value="Välj">Välj</option>
+                    <option  value="Arbetar Heltid">Arbetar Heltid</option>
+                    <option  value="Arbetar Deltid">Arbetar Deltid</option>
+                    <option  value="Annat">Annat</option>
+                    <option  value="Arbetssökande">Arbetssökande</option>
+                    <option  value="Risk för arbetslös">Risk för arbetslös</option>
+                    <option  value="Studerar">Studerar</option>
+                </select>
+                <input type="text" placeholder="T.ex föräldraledig" id="annat-input">
+                <input type="text" placeholder="Ange utbildning" id="stud-input">
+            </div>
+
+            <h4 id="tidutb">Utbildningssyfte</h4>
+            <div class="selectflex">
+                <select class="Options" name="options" id="utbsys-sel" onchange="utbSysInput()">
+                <option  value="Välj">Välj</option>
+                <option  value="Prövning">Prövning</option>
+                <option  value="Validera tidigare yrkeserfarenhet">Validera tidigare yrkeserfarenhet</option>
+                <option  value="Att arbeta med: Administration, ekonomi, juridik">Att arbeta med: Administration, ekonomi, juridik</option>
+                <option  value="Att arbeta med: Bygg och anläggning">Att arbeta med: Bygg och anläggning</option>
+                <option  value="Att arbeta med: Data/IT">Att arbeta med: Data/IT</option>
+                <option  value="Att arbeta med: Fordon och Transport">Att arbeta med: Fordon och Transport</option>
+                <option  value="Att arbeta med: Försäljning och Handel">Att arbeta med: Försäljning och Handel</option>
+                <option  value="Att arbeta med: Hantverk och tillverkning">Att arbeta med: Hantverk och tillverkning</option>
+                <option  value="Att arbeta med: Hotell & Restaurang och kök">Att arbeta med: Hotell & Restaurang och kök</option>
+                <option  value="Att arbeta med: Hälso- och sjukvård">Att arbeta med: Hälso- och sjukvård</option>
+                <option  value="Att arbeta med: Kultur, media, design">Att arbeta med: Kultur, media, design</option>
+                <option  value="Att arbeta med: Pedagogiskt arbete">Att arbeta med: Pedagogiskt arbete</option>
+                <option  value="Att arbeta med: Socialt arbete">Att arbeta med: Socialt arbete</option>
+                <option  value="Att arbeta med: Säkerhetsarbete">Att arbeta med: Säkerhetsarbete</option>
+                <option  value="Att arbeta med: Tekniskt arbete">Att arbeta med: Tekniskt arbete</option>
+                <option  value="Att arbeta med: Annat yrkesområde">Att arbeta med: Annat yrkesområde</option>
+                </select>
+                <input type="text" placeholder="Ange kurs/kurser" id="kurs-input">
+                <input type="text" placeholder="Ange yrke" id="yrke-input">
+            </div>
+
+            <h4 id="tidutb">Studiemedel</h4>
+            <div class="selectflex">
+                <select class="Options" name="options" id="stud-sel">
+                <option  value="Välj">Välj</option>
+                <option  value="Jag kommer att ansöka om studiemedel">Jag kommer att ansöka om studiemedel</option>
+                <option  value="Jag kommer inte att ansöka om studiemedel">Jag kommer inte att ansöka om studiemedel</option>
+                </select>
+            </div>
+
+            <h4 id="tidutb">Studietakt samt önskat startdatum</h4>
+            <div class="selectflex">
+                <select class="Options" name="options" id="takt-sel">
+                <option  value="Välj">Välj</option>
+                <option  value="25%">25%</option>
+                <option  value="50%">50%</option>
+                <option  value="75%">75%</option>
+                <option  value="100%">100%</option>
+                </select>
+                <div id="startdatum"></div>
+            </div>
+
+
+            <p><strong>Motivering</strong> - Varför vill du läsa just den här kursen eller utbildningen?</p>
+            <textarea name="comment"></textarea>
+
+            <p><strong>Särskilt stöd</strong> - Är du i behov av extra stöd i studier till exempel pga. läs- och skrivsvårigheter, dyskalkyli, koncentrationssvårigheter eller annan form ange det här.</p>
+            <textarea name="comment"></textarea>
+
+            <!-- <p><strong>Studietakt</strong> - Skriv önskat startdatum samt om du vill studera på 100, 75, 50 eller 25%.</p>
+                <textarea name="comment"></textarea> -->
+
+            <p><strong>Utbildningsmål</strong> - Vad är ditt mål med studierna?</p>
+            <textarea name="comment"></textarea>
+
+            <button type="button" onclick="" id="kompl-nästa-btn">Nästa</button>
             <div class="info-container">
                 <p class="background"><h3>Kontaktinformation</h3></p>
                 <p>(* - Obligatoriskt info)</p>
