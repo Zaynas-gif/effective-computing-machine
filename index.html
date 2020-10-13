@@ -12,10 +12,7 @@
         <div class="upper-header">
             <img src="imgs/newlogo.jpg" alt="blue hbg logo">
             <div class="login">
-                <div class="please">Please log in</div>
                 <div class="welcome"></div>
-                <input class="login-input" type="text" placeholder="Your ID" id="login-id">
-                <button class="logIn-btn" onclick="LogIn()">Log In</button>
                 <button class="logOut-btn" onclick="LogOut()">Log Out</button>
             </div>
         </div>
@@ -28,8 +25,18 @@
             </ul>
         </div>
     </header>
-            <!---main body of the content *side bar*-->
+
+    <!---main body of the content *side bar*-->
     <div class="wrapper">
+        <div class="Landing-content">  
+            <h4>Substitut för BankID</h4>      
+                <p>Detta är en placeholder som skall immitera BankIDs funktion.<br>    
+                    var god logga in med ett av de IDs(mellan 911111-1111 till 911111-1125)<br> </p>  
+                    <div class="login-con">
+                        <input class="login-input" type="text" placeholder="Your ID" id="login-id">
+                        <button class="logIn-btn" onclick="LogIn()">Log In</button>
+                    </div> 
+        </div>
         <div class="left-bar">
        <!--    <div class="courselist-container">
                 <div class="table-container">  
@@ -1079,6 +1086,7 @@
 
 
     </div>
+    
     <!-- help button section-->
     <button class="Help" onclick="openHelp()">Help</button>
     <button class="Close" onclick="closeHelp()">Close</button>

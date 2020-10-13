@@ -29,24 +29,28 @@ function openHelp() {
   // login logout
   let name = null;
   function LogIn() {
-    name = document.querySelector(".login-input").value
-      if(name === ""){
+    loginid = document.querySelector(".login-input").value
+      if(loginid === ""){
+        loginid = document.querySelector(".login-input").value
           document.querySelector(".please").style.color = "#e90a0a"
           document.querySelector(".login-input").style.borderColor = "#e90a0a"
       }else{
+        personselect(loginid);
     document.querySelector(".logIn-btn").style.display = "none";
     document.querySelector(".logOut-btn").style.display = "inline-block";
     document.querySelector(".login-input").style.display = "none";
-    document.querySelector(".please").style.display = "none";
     document.querySelector(".welcome").innerHTML = "Welcome " + name + "!"
     document.querySelector(".login-input").value = "";
+    document.querySelector(".Landing-content").style.display = "none";
+    document.querySelector(".left-bar").style.display = "block";
+    document.querySelector(".main-content").style.display = "block";
+    
     }
     
 
   }
 
   function LogOut() {
-    document.querySelector(".please").style.color = "black"
     document.querySelector(".login-input").style.borderColor = "black"
     document.querySelector(".logOut-btn").style.display = "none";
     document.querySelector(".logIn-btn").style.display = "inline-block";
@@ -224,8 +228,7 @@ function openHelp() {
   }
       
   // Fill in the Personal Info tab based on the Personal Number
-  function personselect() {
-      var personId = document.getElementById("pers-id").innerHTML;
+  function personselect(personId) {
       var tempObj = {};
   
       for (let i=0; i < listUser.length; i++) {
@@ -244,6 +247,7 @@ function openHelp() {
               document.getElementById("epost2").value = tempObj.epostadress2;
               document.getElementById("kommun").innerHTML = tempObj.hemkommun;
               setSelectedIndex(document.getElementById("modersmål"), tempObj.modersmål);
+              name = tempObj.förnamn + " " +  tempObj.efternamn;
               return;
           }
       }
