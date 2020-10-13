@@ -1,0 +1,142 @@
+
+body {
+    width: 100%;
+    margin: 20px;
+    position: relative;
+    flex-wrap: wrap;
+}
+button {
+    border-radius: 10px;
+    border-color: aliceblue;
+    background-color: #35a1ee;
+}
+.info-container, .courselist-container {
+    color: rgb(29, 29, 235);
+    border: 1px solid rgb(29, 29, 235);
+    padding: 5px;
+    border-radius: 10px;
+    font-size: small;
+    line-height: 12px;
+    position: relative;
+    display: inline-block;
+}
+.info-container {
+    width: 350px;
+    height: auto;
+}
+.courselist-container {
+    width: 60%;
+    height: 450px;
+}
+.row-container {
+    position: relative;
+    color: rgb(29, 29, 235);
+    border: none;
+    width: 90%;
+    height:15px;
+    padding: 2px;
+    margin: 5px;
+}
+.background {
+    background-color: #0069b4;
+    line-height: 15px;
+    color: white;
+}
+
+.label-container, .text-container{
+    display: inline-block;
+    position: absolute;
+    color: rgb(29, 29, 235);
+    height: 15px;
+    padding: 2px;
+    text-align: left;
+    font-size: small;
+}
+.label-container{
+    left: 5px;
+    border: none;
+    line-height: 15px;
+    width: 120px;
+}
+.text-container {
+    left: 150px;
+    line-height: 20px;
+    padding-left: 10px;
+    border: 1px solid rgb(29, 29, 235);
+    border-radius: 5px;
+    width: 170px;
+}
+.required-star {
+    display: inline-block;
+    position: absolute;
+    color: red;
+    height: 15px;
+    padding: 5px;
+    text-align: left;
+    font-size: small;
+    border: none;
+    left: 335px;
+}
+.no-border {
+    border-style: none;
+}
+.box-size {
+    height: 25px;
+}
+.korgcontainer {
+    display: inline-block;
+    position: absolute;
+    right: 5px;
+    min-height: 300px;
+    color: rgb(29, 29, 235);
+    border: 1px solid rgb(29, 29, 235);
+    border-radius: 10px;
+    width: 220px;
+    text-align: left;
+}
+#korg {
+    border: 0;
+    display: inline-block;
+    position: relative;
+    height: auto;
+    color: rgb(29, 29, 235);
+    width: 100%;
+    text-align: left;
+}
+.table-container {
+    position: absolute;
+    display: inline-block;
+    left: 2px;
+    color: rgb(29, 29, 235);
+    border: 1px solid #35a1ee;
+    border-radius: 10px;
+    width: 530px;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+.table-container tr:nth-child(even) {
+    background-color: whitesmoke;
+    color: black;
+}
+.table-container tr:nth-child(odd) {
+    background-color: white;
+    color: black;
+}
+.table-container th {
+    background-color: #35a1ee;
+    color: white;
+}
+.loadinfo {
+    display: inline-block;
+    position: absolute;
+    bottom: 20px;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="jscript.js"></script>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+    <div class="info-container">
+        <p class="background"><h3>Kontaktinformation</h3></p>
+        <p>(* - Obligatoriskt info)</p>
+        <p class="row-container">
+            <span class="label-container">Personnummer</span>
+            <span class="text-container no-border" id="pers-id" type="text" value="">911111-1115</span>
+        </p>
+        <p class="row-container">
+            <span class="label-container">Förnamn</span>
+            <span class="text-container no-border" id="fname" type="text" value=""></span>
+        </p>
+        <p class="row-container">
+            <span class="label-container">Efternamn</span>
+            <span class="text-container no-border" id="lname" type="text" value=""></span>
+        </p>
+        <p class="row-container">
+            <span class="label-container">Adress</span>
+            <span class="text-container no-border" id="adress" type="text" value=""></span>
+        </p>
+        <p class="row-container">
+            <span class="label-container">C/O adress</span>
+            <span class="text-container no-border" id="coadress" type="text" value=""></span>
+        </p>
+        <p class="row-container">
+            <span class="label-container">Postnummer</span>
+            <span class="text-container no-border" id="postnummer" type="text" value=""></span>
+        </p>
+        <p class="row-container">
+            <span class="label-container">Postadress</span>
+            <span class="text-container no-border" id="postadress" type="text" value=""></span>
+        </p>
+        <p class="row-container">
+            <span class="label-container">Telefon</span>
+            <input class="text-container" id="telefon" type="text" value="">
+        </p>
+        <p class="row-container">
+            <span class="label-container">Telefon mobil</span>
+            <input class="text-container" id="mobil" type="text" value="">
+        </p>
+        <p class="row-container">
+            <span class="label-container">E-postadress</span><span class="required-star">*</span>
+            <input class="text-container" id="epost1" type="text"  value="" aria-required="true">
+        </p>
+        <p class="row-container">
+            <span class="label-container">Bekräfta e-postadress</span><span class="required-star">*</span>
+            <input class="text-container" id="epost2" type="text" value="" aria-required="true">
+        </p>
+        <p class="row-container">
+            <span class="label-container">Hemkommun</span>
+            <span class="text-container no-border" id="kommun" type="text" value=""></span>
+        </p>
+        <p class="row-container">
+            <span class="label-container">Modersmål</span>
+            <select class="text-container box-size" id="modersmål">
+                <option>Afrikaans   </option><option>Albanian   </option><option>Arabic     </option>
+                <option>Armenian    </option><option>Basque     </option><option>Bengali    </option>
+                <option>Bulgarian   </option><option>Catalan    </option><option>Cambodian  </option>
+                <option>Chinese     </option><option>Croatian   </option><option>Czech      </option>
+                <option>Danish      </option><option>Dutch      </option><option>English    </option>
+                <option>Estonian    </option><option>Fiji       </option><option>Finnish    </option>
+                <option>French      </option><option>Georgian   </option><option>German     </option>
+                <option>Greek       </option><option>Gujarati   </option><option>Hebrew     </option>
+                <option>Hindi       </option><option>Hungarian  </option><option>Icelandic  </option>
+                <option>Indonesian  </option><option>Irish      </option><option>Italian    </option>
+                <option>Japanese    </option><option>Javanese   </option><option>Korean     </option>
+                <option>Latin       </option><option>Latvian    </option><option>Lithuanian </option>
+                <option>Macedonian  </option><option>Malay      </option><option>Malayalam  </option>
+                <option>Maltese     </option><option>Maori      </option><option>Marathi    </option>
+                <option>Mongolian   </option><option>Nepali     </option><option>Norwegian  </option>
+                <option>Persian     </option><option>Polish     </option><option>Portuguese </option>
+                <option>Punjabi     </option><option>Quechua    </option><option>Romanian   </option>
+                <option>Russian     </option><option>Samoan     </option><option>Serbian    </option>
+                <option>Slovak      </option><option>Slovenian  </option><option>Spanish    </option>
+                <option>Swahili     </option><option>Swedish    </option><option>Tamil      </option>
+                <option>Tatar       </option><option>Telugu     </option><option>Thai       </option>
+                <option>Tibetan     </option><option>Tonga      </option><option>Turkish    </option>
+                <option>Ukrainian   </option><option>Urdu       </option><option>Uzbek      </option>
+                <option>Vietnamese  </option><option>Welsh      </option><option>Xhosa      </option>
+            </select>
+        </p>
+        <button onclick="personselect()">Get Info</button>
+    </div>
+    <!-- Available and selected courses placeholders that are later filled in js -->
+    <div class="courselist-container">
+        <div class="table-container">  <!--placeholder for course list-->
+            <p id="courses"></p>
+        </div>
+        <div  class="korgcontainer">   <!--placeholder for selected courses - shopping cart-->
+            <h3>My Selections</h3>
+            <p style="word-spacing: 80px;">Course Points</p>
+            <table id="korg">
+            </table>
+        </div>
+        <button class="loadinfo" onclick="courseselect('sva grund')">Course Info</button>
+    </div>
+</body>
+</html>
