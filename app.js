@@ -267,11 +267,12 @@ function openHelp() {
       return;
   }
   
-  // Function to shortlist the courses list based on COURSE NAME
+ // Function to shortlist the courses list based on COURSE NAME
   // And display it in the div
-  function courseselect(coursecode) {
-      shortList = listCourse.filter(minilist => {return minilist.grupp.includes(coursecode);});
-      txt = "<table width=100%; border='0'>";
+  function courseselect(group, skol) {
+    shortList = listCourse.filter(minilist => {return (minilist.grupp.includes(group) && minilist.skol.includes(skol));});
+      txt = "<br><h3>Kursutbud</h3>";
+      txt += "<table width=100%; border='0'>";
       txt += "<tr><th>Course</th><th>Institution</th><th>Course Code</th><th>Year</th><th>Duration</th><th>Points</th><th>Study Pace</th><th>Select</th></tr>"
   // the next three comments - altered not to display two values
   //    txt += "<tr><th>Group</th><th>Course</th><th>Institution</th><th>Code</th><th>Course Code</th><th>Year</th><th>Duration</th><th>Points</th><th>Study Pace</th><th>Select</th></tr>"
@@ -289,6 +290,7 @@ function openHelp() {
       }
       txt += "</table>";
       document.getElementById("courses").innerHTML = txt;
+    
   }
   
   // stack handling
@@ -340,14 +342,16 @@ function openHelp() {
 }
 
 
- function togglediv(id) {
-  document.querySelectorAll(".open").forEach(function(div) {
-    if (div.id == id) {
-      div.style.display = div.style.display == "none" ? "block" : "none";
-    } else {
-      div.style.display = "none";
-    }
-  });
+function togglediv(id, kurs, skol) {
+  console.log(id, kurs, skol);
+ document.querySelectorAll(".open").forEach(function(div) {
+   if (div.id == id) {
+     div.style.display = div.style.display == "none" ? "block" : "none";
+     courseselect(kurs,skol);
+   } else {
+     div.style.display = "none";
+   }
+ });
 }
 
 
