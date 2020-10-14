@@ -352,5 +352,54 @@ function openHelp() {
 
 
 
+/* Gå vidare left-bar button */
+
+function Gavidare() {
+  document.querySelector(".main-content").style.display = "none";
+  document.querySelector(".non-nav-content").style.display = "block";
+  document.querySelector(".komplettera-content").style.display = "block";
+  document.querySelector(".gå-vidare").style.display = "none";
+  document.querySelector(".tillbaka-korg").style.display = "block";
+}
+
+function tillbakakorg() {
+  document.querySelector(".main-content").style.display = "block";
+  document.querySelector(".non-nav-content").style.display = "none";
+  document.querySelector(".komplettera-content").style.display = "none";
+  document.querySelector(".gå-vidare").style.display = "block";
+  document.querySelector(".tillbaka-korg").style.display = "none";
+  document.querySelector(".info-container").style.display = "none";
+}
+
+function komplnästabtn() {
+  document.querySelector(".komplettera-content").style.display = "none";
+  document.querySelector(".info-container").style.display = "block";
+}
 
 
+function kontaktföregående() {
+  document.querySelector(".komplettera-content").style.display = "block";
+  document.querySelector(".info-container").style.display = "none";
+}
+
+function kontaktnästabtn() {
+ /* document.querySelector(".info-container").style.display = "none"; */
+}
+
+function visastudieplan() {
+  var a = document.querySelector(".nav-studyplan").style.display 
+  if (a == "none"){
+  document.getElementById("output").style.display = "block";
+  document.querySelector(".main-content").style.display = "none";
+  document.querySelector(".left-bar").style.display = "none";
+  document.querySelector(".non-nav-content").style.display = "none";
+  document.querySelector(".nav-studyplan").style.display = "block";
+} else {
+  document.getElementById("output").style.display = "none";
+  document.querySelector(".main-content").style.display = "block";
+  document.querySelector(".left-bar").style.display = "block";
+  document.querySelector(".non-nav-content").style.display = "none";
+  document.querySelector(".nav-studyplan").style.display = "none";
+
+}
+}
