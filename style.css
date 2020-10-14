@@ -125,7 +125,9 @@ header{
     top: 232px;
 }
 /* main content */
-.main-content {
+.main-content,
+.non-nav-content,
+.nav-studyplan {
     position: relative;
     flex:6;
     margin: 32px 16px;
@@ -154,8 +156,10 @@ header{
 .left-bar {
   /*  display: none; */
 }
-
-
+/* tillbaka button vid varukorg */
+.tillbaka-korg {
+    display: none;
+}
 /* kontak info */
 .info-container {
     display: none;
@@ -166,13 +170,20 @@ header{
     display: none;
 }
 
+.nav-studyplan {
+    display: none;
+}
 /* button styling */
 
 #Bifoga-btn,
 #Väljfil-btn,
 .logIn-btn,
 .logOut-btn,
-#kompl-nästa-btn {
+.gå-vidare,
+.tillbaka-korg,
+.kompl-nästa-btn,
+.kontakt-föregående-btn,
+.kontakt-nästa-btn{
     background: linear-gradient(180deg, rgba(89,190,255,1) 0%, rgba(34,167,255,1) 20%, #009bff 40%, rgba(0,155,255,1) 60%, rgba(34,167,255,1) 80%, rgba(89,190,255,1) 100%);;
     color: rgb(247, 247, 247);
     border: none;
@@ -182,8 +193,10 @@ header{
     outline-width: thin;
 }
 
-#kompl-nästa-btn {
-    margin: 16px 20px;
+.kompl-nästa-btn,
+.kontakt-föregående-btn,
+.kontakt-nästa-btn {
+    margin: 16px 5px 16px 10px;
 }
 
 /* Breadcrumb list */
@@ -653,8 +666,6 @@ caption {
 
 /* kontakt personal info varu korg */
 .info-container, .courselist-container {
-    color: rgb(29, 29, 235);
-    border: 1px solid rgb(29, 29, 235);
     padding: 5px;
     border-radius: 10px;
     font-size: small;
@@ -672,15 +683,14 @@ caption {
 }
 .row-container {
     position: relative;
-    color: rgb(29, 29, 235);
     border: none;
     width: 90%;
-    height:15px;
+    height:13px;
     padding: 2px;
     margin: 5px;
+    margin-left: 15px;
 }
 .background {
-    background-color: #0069b4;
     line-height: 15px;
     color: white;
 }
@@ -688,8 +698,7 @@ caption {
 .label-container, .text-container{
     display: inline-block;
     position: absolute;
-    color: rgb(29, 29, 235);
-    height: 15px;
+    height: 20px;
     padding: 2px;
     text-align: left;
     font-size: small;
@@ -697,14 +706,13 @@ caption {
 .label-container{
     left: 5px;
     border: none;
-    line-height: 15px;
+    line-height: 13px;
     width: 120px;
 }
 .text-container {
     left: 150px;
     line-height: 20px;
     padding-left: 10px;
-    border: 1px solid rgb(29, 29, 235);
     border-radius: 5px;
     width: 170px;
 }
@@ -724,7 +732,8 @@ caption {
 }
 
 .left-bar,
-.main-content {
+.main-content,
+.non-nav-content {
     display: none;
 }
 .box-size {
