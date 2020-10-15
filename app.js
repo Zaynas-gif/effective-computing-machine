@@ -429,7 +429,8 @@ function kontaktföregående() {
 }
 
 function kontaktnästabtn() {
- /* document.querySelector(".info-container").style.display = "none"; */
+ document.querySelector(".info-container").style.display = "none";
+ document.getElementById("skickain-information").style.display = "block";
 }
 
 function visastudieplan() {
