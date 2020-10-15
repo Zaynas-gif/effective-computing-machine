@@ -66,9 +66,10 @@ function loadList(persId) {
     shortList1 = detailsObj.filter(minilist => {return minilist.persId.includes(persId);});
 
     var tempObj = {};
-  
+    personselect(persId); 
     for (let i=0; i < listUser.length; i++) {
         tempObj = listUser[i];
+        found = false;
         if (tempObj.personnummer == persId) {
             name = tempObj.förnamn + " " +  tempObj.efternamn;
             break;
@@ -101,10 +102,139 @@ function loadList(persId) {
     document.getElementById("startdatum").value = shortList1[0].startDatum;
     document.getElementById("Motivera").value = shortList1[0].motivera;
 //    document.getElementById("Särkilt").value = shortList1[0].särskilt;
- //   document.getElementById("Utbildningsmål").value = shortList1[0].utbildningsmål;
+//    document.getElementById("Utbildningsmål").value = shortList1[0].utbildningsmål;
     setSelectedIndex(document.getElementById("modersmål"), shortList1[0].modersmål);
 }
 
+function displayNamn() {
+  var txt = document.getElementById("fname").innerHTML + " " + document.getElementById("lname").innerHTML + " " +
+  document.getElementById("adress").innerHTML + " " + document.getElementById("coadress").innderHTML + "  " +
+  document.getElementById("postnummer").innerHTML + " " + document.getElementById("postadress").innerHTML + " " +
+  document.getElementById("telefon").innerHTML + " " + document.getElementById("mobil").innerHTML;
+  document.getElementById("sökande-skickain").innerHTML = txt;
+
+
+  
+
+ 
+//function displayAdress() {
+//var txt = document.getElementById("adress").innerHTML + " " + document.getElementById("coadress").innderHTML;
+  //document.getElementById("skicka-inadress2").innerHTML = txt;
+   //}
+
+ //function displayCoadress() {
+ //var txt =  document.getElementById("postnummer").innerHTML + " " + document.getElementById("postadress").innerHTML;
+ //document.getElementById("skicka-inadress").innerHTML = txt;
+ //}
+
+ //function displayCoadress() {
+  // var txt =  document.getElementById("telefon").innerHTML + " " + document.getElementById("mobil").innerHTML;
+  // document.getElementById("skicka-intel").innerHTML = txt;
+
+
+
+
+  
+/*
+            persDetails.telefon = document.getElementById("telefon").value;
+  persDetails.mobil = document.getElementById("mobil").value;
+  persDetails.epostadress = document.getElementById("epost1").value;
+  persDetails.epostadress2 = document.getElementById("epost2").value;
+  persDetails.hemkommun = document.getElementById("kommun").innerHTML;
+  persDetails.tidutbSel = document.getElementById("tidutb-sel").value;
+  persDetails.utbInput = document.getElementById("utb-input").value;
+  persDetails.sysSel = document.getElementById("sys-sel").value;
+  persDetails.annatInput = document.getElementById("annat-input").value;
+  persDetails.studInput = document.getElementById("stud-input").value;
+  persDetails.utbsysSel = document.getElementById("utbsys-sel").value;
+  persDetails.kursInput = document.getElementById("kurs-input").value;
+  persDetails.yrkeInput = document.getElementById("yrke-input").value;
+  persDetails.studSel = document.getElementById("stud-sel").value;
+  persDetails.taktSel = document.getElementById("takt-sel").value;
+  persDetails.startDatum = document.getElementById("startdatum").value;
+  persDetails.motivera = document.getElementById("Motivera").value;
+  persDetails.särskilt = document.getElementById("Särkilt").value;
+  persDetails.utbildningsmål = document.getElementById("Utbildningsmål").value;
+  document.getElementById("modersmål") = persDetails.modersmål;
+*/
+};
+
+function displayTU() {
+  var txt = document.getElementById("tidutb-sel").value;
+  document.getElementById("tidigare-utbildning").innerHTML = txt;
+}
+
+function utbsft() {
+  var txt = document.getElementById("utbsys-sel").value;
+  document.getElementById("utbildningssft").innerHTML = txt;
+}
+
+function studiemedel() {
+  var txt = document.getElementById("stud-sel").value;
+  document.getElementById("studiemedeld").innerHTML = txt;
+}
+
+function nuvarandesys() {
+  var txt = document.getElementById("sys-sel").value;
+  document.getElementById("nuvarandesys").innerHTML = txt;
+}
+
+function studtakt() {
+  var txt = document.getElementById("takt-sel").value;
+  document.getElementById("stdtakt").innerHTML = txt;
+}
+
+function startdatumen() {
+  var txt = document.getElementById("startdatum").innerHTML;
+  document.getElementById("start").innerHTML = txt;
+}
+
+function motiVering() {
+  var txt = document.getElementById("Motivera").value;
+  document.getElementById("motkomment").innerHTML = txt;
+}
+
+function sarstod() {
+  var txt = document.getElementById("Särkilt").value;
+  document.getElementById("sarstod").innerHTML = txt;
+
+}
+
+function utbilmal() {
+  var txt = document.getElementById("Utbildningsmål").value;
+  document.getElementById("utbmal").innerHTML = txt;
+
+}
+
+
+
+function saveList() {
+  var persDetails =  {};
+
+  persDetails.telefon = document.getElementById("telefon").value;
+  persDetails.mobil = document.getElementById("mobil").value;
+  persDetails.epostadress = document.getElementById("epost1").value;
+  persDetails.epostadress2 = document.getElementById("epost2").value;
+  persDetails.hemkommun = document.getElementById("kommun").innerHTML;
+  persDetails.tidutbSel = document.getElementById("tidutb-sel").value;
+  persDetails.utbInput = document.getElementById("utb-input").value;
+  persDetails.sysSel = document.getElementById("sys-sel").value;
+  persDetails.annatInput = document.getElementById("annat-input").value;
+  persDetails.studInput = document.getElementById("stud-input").value;
+  persDetails.utbsysSel = document.getElementById("utbsys-sel").value;
+  persDetails.kursInput = document.getElementById("kurs-input").value;
+  persDetails.yrkeInput = document.getElementById("yrke-input").value;
+  persDetails.studSel = document.getElementById("stud-sel").value;
+  persDetails.taktSel = document.getElementById("takt-sel").value;
+  persDetails.startDatum = document.getElementById("startdatum").value;
+  persDetails.motivera = document.getElementById("Motivera").value;
+  persDetails.särskilt = document.getElementById("Särkilt").value;
+  persDetails.utbildningsmål = document.getElementById("Utbildningsmål").value;
+  document.getElementById("modersmål") = persDetails.modersmål;
+
+
+  localStorage.setItem("personDetails", JSON.stringify(persDetails));
+}
 
 
 // functions to display inputfields in komplettera
@@ -173,7 +303,7 @@ function loadList(persId) {
     {personnummer: "911111-1117", förnamn: "förnamn17",efternamn: "efternamn17",adress: "adress17",coadress: "coaddress17", postnummer: "25117", postadress: "postaddress17",telefon: "111111117",mobil: "111111117",epostadress: "epostadress17@domain.com",epostadress2: "epostadress17@domain.com",hemkommun: "kommun05",modersmål: "French"},
     {personnummer: "911111-1118", förnamn: "förnamn18",efternamn: "efternamn18",adress: "adress18",coadress: "coaddress18", postnummer: "25118", postadress: "postaddress18",telefon: "111111118",mobil: "111111118",epostadress: "epostadress18@domain.com",epostadress2: "epostadress18@domain.com",hemkommun: "kommun06",modersmål: "German"},
     {personnummer: "911111-1119", förnamn: "förnamn19",efternamn: "efternamn19",adress: "adress19",coadress: "coaddress19", postnummer: "25119", postadress: "postaddress19",telefon: "111111119",mobil: "111111119",epostadress: "epostadress19@domain.com",epostadress2: "epostadress19@domain.com",hemkommun: "kommun03",modersmål: "Swedish"},
-    {personnummer: "911111-1120", förnamn: "förnamn20",efternamn: "efternamn20",adress: "adress20",coadress: "coaddress20", postnummer: "25120", postadress: "postaddress20",telefon: "111111120",mobil: "111111120",epostadress: "epostadress20@domain.com",epostadress2: "epostadress20@domain.com",hemkommun: "kommun04",modersmål: "Arabic"},
+    {personnummer: "911111-1120", förnamn: "Peter",efternamn: "Danielsson",adress: "Drottninggatan 14",coadress: "Lgh 1101", postnummer: "252 21", postadress: "postaddress20",telefon: "042-10 50 00",mobil: "042-10 50 00",epostadress: "epostadress20@domain.com",epostadress2: "epostadress20@domain.com",hemkommun: "kommun04",modersmål: "Arabic"},
     {personnummer: "911111-1121", förnamn: "förnamn21",efternamn: "efternamn21",adress: "adress21",coadress: "coaddress21", postnummer: "25121", postadress: "postaddress21",telefon: "111111121",mobil: "111111121",epostadress: "epostadress21@domain.com",epostadress2: "epostadress21@domain.com",hemkommun: "kommun05",modersmål: "English"},
     {personnummer: "911111-1122", förnamn: "förnamn22",efternamn: "efternamn22",adress: "adress22",coadress: "coaddress22", postnummer: "25122", postadress: "postaddress22",telefon: "111111122",mobil: "111111122",epostadress: "epostadress22@domain.com",epostadress2: "epostadress22@domain.com",hemkommun: "kommun06",modersmål: "Polish"},
     {personnummer: "911111-1123", förnamn: "förnamn23",efternamn: "efternamn23",adress: "adress23",coadress: "coaddress23", postnummer: "25123", postadress: "postaddress23",telefon: "111111123",mobil: "111111123",epostadress: "epostadress23@domain.com",epostadress2: "epostadress23@domain.com",hemkommun: "kommun01",modersmål: "Swedish"},
@@ -430,7 +560,18 @@ function kontaktföregående() {
 
 function kontaktnästabtn() {
  document.querySelector(".info-container").style.display = "none";
- document.getElementById("skickain-information").style.display = "block";
+ document.querySelector(".skickain-information").style.display = "block";
+ displayNamn();
+ displayTU();
+ utbsft();
+ studiemedel();
+ nuvarandesys();
+ studtakt();
+ startdatumen();
+ motiVering();
+ sarstod();
+ utbilmal();
+
 }
 
 function visastudieplan() {
@@ -450,3 +591,4 @@ function visastudieplan() {
 
 }
 }
+

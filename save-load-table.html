@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Handle data</h3>
+
+<p id="person-course"></p>
+<p id="person-details"></p>
+<p id="filter-course"></p>
+<p id="filter-details"></p>
+
+<script>
+var x, txt = "";
+
+//Function to save array in local storage
+function saveList() {
+    var persKurs = [{persId: "911111-1119", skolKursId: "PRRPRR01"},
+                    {persId: "911111-1119", skolKursId: "PRRPRR01"},
+                    {persId: "911111-1117", skolKursId: "PRRPRR01"},
+                    {persId: "911111-1125", skolKursId: "PRRPRR01"}
+                    ];
+    var persDetails =  [{persId: "911111-1119", telefon: "111111120",mobil: "111111220",epostadress: "epostadress20@domain.com",epostadress2: "epostadress20@domain.se",modersmål: "Arabic", tidutdSel:"", utbInput:"", sysSel:"", annatInput:"", studInput:"", utbsysSel:"", kursInput:"", yrkeInput:"", studSel:"",taktSel:"", startDatum: "", motivera:"", särskilt:"" , utbildningsmål:""},
+                        {persId: "911111-1117", telefon: "111111117",mobil: "111111217",epostadress: "epostadress17@domain.com",epostadress2: "epostadress17@domain.se",modersmål: "German", tidutdSel:"", utbInput:"", sysSel:"", annatInput:"", studInput:"", utbsysSel:"", kursInput:"", yrkeInput:"", studSel:"",taktSel:"", startDatum: "", motivera:"", särskilt:"" , utbildningsmål:""},
+                        {persId: "911111-1125", telefon: "111111125",mobil: "111111225",epostadress: "epostadress25@domain.com",epostadress2: "epostadress25@domain.se",modersmål: "Swedish", tidutdSel:"", utbInput:"", sysSel:"", annatInput:"", studInput:"", utbsysSel:"", kursInput:"", yrkeInput:"", studSel:"",taktSel:"", startDatum: "", motivera:"", särskilt:"" , utbildningsmål:""}
+                    ];
+    var jsonArray1 = JSON.stringify(persKurs);
+    var jsonArray2 = JSON.stringify(persDetails);
+    
+    localStorage.setItem("personCourse", jsonArray1);
+    localStorage.setItem("personDetails", jsonArray2);
+}
+//Function for retrieving data from local storage
+function loadList() {
+    var coursesObj = JSON.parse(localStorage.getItem("personCourse"));
+    var detailsObj = JSON.parse(localStorage.getItem("personDetails"));
+
+    txt = "<table width=300px; border='1'>"
+    for (x in coursesObj) {
+        txt += "<tr><td>" + coursesObj[x].persId + "</td><td>"+ coursesObj[x].skolKursId +"</td></tr>";
+    }
+    txt += "</table>"
+    document.getElementById("person-course").innerHTML = txt;
+
+    txt = "<table width=700px; border='1'>"
+    for (x in detailsObj) {
+        txt +=  "<tr><td>" + detailsObj[x].persId + 
+                "</td><td>"+ detailsObj[x].telefon +
+                "</td><td>"+ detailsObj[x].mobil +
+                "</td><td>"+ detailsObj[x].epostadress +
+                "</td><td>"+ detailsObj[x].epostadress2 +
+                "</td><td>"+ detailsObj[x].modersmål +
+                "</td><td>"+ detailsObj[x].tidutdSel +
+                "</td><td>"+ detailsObj[x].utdInput +
+                "</td><td>"+ detailsObj[x].sysSel +
+                "</td><td>"+ detailsObj[x].annatInput +
+                "</td><td>"+ detailsObj[x].studInput +
+                "</td><td>"+ detailsObj[x].utbsysSel +
+                "</td><td>"+ detailsObj[x].kursInput +
+                "</td><td>"+ detailsObj[x].yrkeInput +
+                "</td><td>"+ detailsObj[x].studSel +
+                "</td><td>"+ detailsObj[x].taktSel +
+                "</td><td>"+ detailsObj[x].startDatum +
+                "</td><td>"+ detailsObj[x].motivera +
+                "</td><td>"+ detailsObj[x].särskilt +
+                "</td><td>"+ detailsObj[x].utbildningsmål +
+            "</td></tr>";
+    }
+    txt += "</table>"    
+    document.getElementById("person-details").innerHTML = txt;
+
+    shortList = coursesObj.filter(minilist => {return minilist.persId.includes("911111-1119");});
+    txt = "<table width=300px; border='1'>"
+    for (x in shortList) {
+        txt += "<tr><td>" + coursesObj[x].persId + "</td><td>"+ coursesObj[x].skolKursId +"</td></tr>";
+    }
+    txt += "</table>"
+    document.getElementById("filter-course").innerHTML = txt;
+
+    shortList1 = detailsObj.filter(minilist => {return minilist.persId.includes("911111-1119");});
+    txt = "<table width=700px; border='1'>"
+    for (x in shortList1) {
+        txt +=  "<tr><td>" + detailsObj[x].persId + 
+                "</td><td>"+ detailsObj[x].telefon +
+                "</td><td>"+ detailsObj[x].mobil +
+                "</td><td>"+ detailsObj[x].epostadress +
+                "</td><td>"+ detailsObj[x].epostadress2 +
+                "</td><td>"+ detailsObj[x].modersmål +
+                "</td><td>"+ detailsObj[x].tidutdSel +
+                "</td><td>"+ detailsObj[x].utdInput +
+                "</td><td>"+ detailsObj[x].sysSel +
+                "</td><td>"+ detailsObj[x].annatInput +
+                "</td><td>"+ detailsObj[x].studInput +
+                "</td><td>"+ detailsObj[x].utbsysSel +
+                "</td><td>"+ detailsObj[x].kursInput +
+                "</td><td>"+ detailsObj[x].yrkeInput +
+                "</td><td>"+ detailsObj[x].studSel +
+                "</td><td>"+ detailsObj[x].taktSel +
+                "</td><td>"+ detailsObj[x].startDatum +
+            "</td></tr>";
+    }
+    txt += "</table>"    
+    document.getElementById("filter-details").innerHTML = txt;
+}
+saveList();
+loadList();
+</script>
+
+</body>
+</html>

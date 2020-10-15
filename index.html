@@ -535,12 +535,6 @@
                                 <li class="accordion-li"><a class="alink" onclick="togglediv('GruppundervisingkomvuxClick','gymnasienivå', 'Komvux Helsingborg'); exitDiv()" href="#">Gruppundervisning 2020, Komvux Helsingborg</a></li>
                                 <li class="accordion-li"><a class="alink" onclick="togglediv('DistansundervisningarhermodsClick','',''); exitDiv()" href="#">Distansutbildning 2020, Hermods</a></li>
                             </ul> 
-                            <div class="kursname">
-                                <p>Kurser på gymnasienivå</p>
-                            </div> 
-                            <ul style="padding-left: 0;">
-                                <li class="accordion-li"><a class="alink" onclick="togglediv('SokerprovningClick'); exitDiv()" href="#">Söker prövning</a></li>
-                            </ul> 
                         </div>             
                     </div>
                     <div class="small-div2">
@@ -574,6 +568,12 @@
                             <li class="accordion-li"><a class="alink" onclick="togglediv('AnnankommunClick'); exitDiv()" href="#">Söka utbildning i annan kommun</a></li>
                             <li class="accordion-li"><a class="alink" onclick="togglediv('FranAnnankommunClick'); exitDiv()" href="#">Sökande från annan hemkommun</a></li>
                             <li class="accordion-li"><a class="alink" onclick="togglediv('VOFvisstidClick'); exitDiv()" href="#">Anmälan VOF Visstidsanställda USK</a></li>
+                        </ul> 
+                        <div class="kursname">
+                            <p>Kurser på gymnasienivå</p>
+                        </div> 
+                        <ul style="padding-left: 0;">
+                            <li class="accordion-li"><a class="alink" onclick="togglediv('SokerprovningClick'); exitDiv()" href="#">Söker prövning</a></li>
                         </ul> 
                     </div>       
                 </div>
@@ -829,55 +829,57 @@
                 <button type="button" onclick="kontaktföregående()" class="kontakt-föregående-btn">Föregående</button>
                 <button type="button" onclick="kontaktnästabtn()" class="kontakt-nästa-btn">Nästa</button>
             </div>
-            <div onclick="kontaktnästabtn()" style="display:none;" id="skickain-information">¨
+            <div onclick="kontaktnästabtn()" style="display:none;" class="skickain-information">
                 <ul class="breadcrumb">
                     <li>Komplettera</li>
                     <li>Kontaktinformation</li>
                     <li><strong>Skicka in</strong></li>
                 </ul>
-                <h4 id="Nuvsys">Sökande</h4>
-                <div class="selectflex">
-                    
-                </div>
 
-               <h4 id="tidutb">Tidigare urbildning</h4>
-               <div></div>
+               <!-- <div  class="korgcontainer">   
+                    <h3>My Selections</h3>
+                    <p style="word-spacing: 80px;">Course Points</p>
+                    <table id="korg">
+                    </table>
+                </div> -->
+          
+                <h4 id="skicka-intext">Sökande</h4>
+                <div  id="sökande-skickain"> </div>
 
+                <h4 id="skicka-intext">Utbildningssyfte</h4>
+                <div id="utbildningssft"></div>
 
+                <h4 id="skicka-intext">Studiemedel</h4>
+                <div id="studiemedeld"></div>
 
-               <h4 id="tidutb">Nuvarande sysselsättning</h4>
-               <div></div>
+                <h4 id="skicka-intext">Nuvarande sysselsättning</h4>
+                <div id="nuvarandesys"></div>
 
+                <h4 id="skicka-intext">Studietakt</h4>
+                <div id="stdtakt"></div>
+
+                <h4 id="skicka-intext">Startdatum</h4>
+                <div id="start"></div>
+
+                <h4 id="skicka-intext">Tidigare Utbildning</h4>
                
+
+               <div id="tidigare-utbildning"></div>
+
+               <h4 id="skicka-intext">Motivering - Varför vill du läsa just den här kursen eller utbildning?</h4>
+                <div id="motkomment"></div>
+
+
+                <h4 id="skicka-intext">Särskilt stöd - Är du i behov av extra stöd i studier till exempel pga. läs- och skrivsvårigheter, dyskalkyli, koncentrationssvårigheter eller annan form ange det här.</h4>
+                <div id="sarstod"></div> 
+
+                <h4 id="skicka-intext">Utbildningsmål - Vad är ditt mål med studierna?</h4>
+                <div id="utbmal"></div> 
+
+
+
+                    
                 
-
-                <h4 id="tidutb">Utbildningsyfte</h4>
-                <div>
-                    
-                </div>
-                
-                <h4 id="tidutb">Studiemedel</h4>
-                <div>
-                    
-                </div>
-
-                <h4 id="tidutb">Motivering</h4>
-                <div>
-                    
-                </div>
-                <h4 id="tidutb">Särskillt stöd</h4>
-                <div>
-                    
-                </div>
-                <h4 id="tidutb">Studietakt</h4>
-                <div>
-                    
-                </div>
-
-                <h4 id="tidutb">Utbildningsmål</h4>
-                <div>
-                    
-                </div>
 
                 
 
