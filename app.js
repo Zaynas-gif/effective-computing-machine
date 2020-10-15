@@ -1,4 +1,3 @@
-
 //Back to top functions
 const toTop = document.querySelector(".to-top");
 
@@ -35,19 +34,16 @@ function openHelp() {
           document.querySelector(".please").style.color = "#e90a0a"
           document.querySelector(".login-input").style.borderColor = "#e90a0a"
       }else{
-        personselect(loginid);
-    document.querySelector(".logIn-btn").style.display = "none";
-    document.querySelector(".logOut-btn").style.display = "inline-block";
-    document.querySelector(".login-input").style.display = "none";
-    document.querySelector(".welcome").innerHTML = "Welcome " + name + "!"
-    document.querySelector(".login-input").value = "";
-    document.querySelector(".Landing-content").style.display = "none";
-    document.querySelector(".left-bar").style.display = "block";
-    document.querySelector(".main-content").style.display = "block";
-    
-    }
-    
-
+        loadList(loginid);
+        document.querySelector(".logIn-btn").style.display = "none";
+        document.querySelector(".logOut-btn").style.display = "inline-block";
+        document.querySelector(".login-input").style.display = "none";
+        document.querySelector(".welcome").innerHTML = "Welcome " + name + "!"
+        document.querySelector(".login-input").value = "";
+        document.querySelector(".Landing-content").style.display = "none";
+        document.querySelector(".left-bar").style.display = "block";
+        document.querySelector(".main-content").style.display = "block";
+     }
   }
 
   function LogOut() {
@@ -62,6 +58,52 @@ function openHelp() {
 //
 
 
+function loadList(persId) {
+    var coursesObj = JSON.parse(localStorage.getItem("personCourse"));
+    var detailsObj = JSON.parse(localStorage.getItem("personDetails"));
+    
+    shortList = coursesObj.filter(minilist => {return minilist.persId.includes(persId);});
+    shortList1 = detailsObj.filter(minilist => {return minilist.persId.includes(persId);});
+
+    var tempObj = {};
+  
+    for (let i=0; i < listUser.length; i++) {
+        tempObj = listUser[i];
+        if (tempObj.personnummer == persId) {
+            name = tempObj.förnamn + " " +  tempObj.efternamn;
+            break;
+        }
+    }
+  
+    document.getElementById("pers-id").innerHTML = tempObj.personnummer;
+    document.getElementById("fname").innerHTML = tempObj.förnamn;
+    document.getElementById("lname").innerHTML = tempObj.efternamn;
+    document.getElementById("adress").innerHTML = tempObj.adress;
+    document.getElementById("coadress").innerHTML = tempObj.coadress;
+    document.getElementById("postnummer").innerHTML = tempObj.postnummer;
+    document.getElementById("postadress").innerHTML = tempObj.postadress;
+
+    document.getElementById("telefon").value = shortList1[0].telefon;
+    document.getElementById("mobil").value = shortList1[0].mobil;
+    document.getElementById("epost1").value = shortList1[0].epostadress;
+    document.getElementById("epost2").value = shortList1[0].epostadress2;
+    document.getElementById("kommun").innerHTML = shortList1[0].hemkommun;
+    document.getElementById("tidutb-sel").value = shortList1[0].tidutbSel;
+    document.getElementById("utb-input").value = shortList1[0].utbInput;
+    document.getElementById("sys-sel").value = shortList1[0].sysSel;
+    document.getElementById("annat-input").value = shortList1[0].annatInput;
+    document.getElementById("stud-input").value = shortList1[0].studInput;
+    document.getElementById("utbsys-sel").value = shortList1[0].utbsysSel;
+    document.getElementById("kurs-input").value = shortList[0].kursInput;
+    document.getElementById("yrke-input").value = shortList1[0].yrkeInput;
+    document.getElementById("stud-sel").value = shortList1[0].studSel;
+    document.getElementById("takt-sel").value = shortList1[0].taktSel;
+    document.getElementById("startdatum").value = shortList1[0].startDatum;
+    document.getElementById("Motivera").value = shortList1[0].motivera;
+//    document.getElementById("Särkilt").value = shortList1[0].särskilt;
+ //   document.getElementById("Utbildningsmål").value = shortList1[0].utbildningsmål;
+    setSelectedIndex(document.getElementById("modersmål"), shortList1[0].modersmål);
+}
 
 
 
@@ -122,23 +164,23 @@ function openHelp() {
 // courses and contact info
 
     var listUser = [
-      {personnummer: "911111-1111", förnamn: "förnamn11",efternamn: "efternamn11",adress: "adress11",coadress: "coaddress11", postnummer: "25111", postadress: "postaddress11",telefon: "111111111",mobil: "111111111",epostadress: "epostadress11@domain.com",epostadress2: "epostadress11@domain.com",hemkommun: "kommun01",modersmål: "English"},
-      {personnummer: "911111-1112", förnamn: "förnamn12",efternamn: "efternamn12",adress: "adress12",coadress: "coaddress12", postnummer: "25112", postadress: "postaddress12",telefon: "111111112",mobil: "111111112",epostadress: "epostadress12@domain.com",epostadress2: "epostadress12@domain.com",hemkommun: "kommun02",modersmål: "Arabic"},
-      {personnummer: "911111-1113", förnamn: "förnamn13",efternamn: "efternamn13",adress: "adress13",coadress: "coaddress13", postnummer: "25113", postadress: "postaddress13",telefon: "111111113",mobil: "111111113",epostadress: "epostadress13@domain.com",epostadress2: "epostadress13@domain.com",hemkommun: "kommun01",modersmål: "Chinese"},
-      {personnummer: "911111-1114", förnamn: "förnamn14",efternamn: "efternamn14",adress: "adress14",coadress: "coaddress14", postnummer: "25114", postadress: "postaddress14",telefon: "111111114",mobil: "111111114",epostadress: "epostadress14@domain.com",epostadress2: "epostadress14@domain.com",hemkommun: "kommun02",modersmål: "Turkish"},
-      {personnummer: "911111-1115", förnamn: "förnamn15",efternamn: "efternamn15",adress: "adress15",coadress: "coaddress15", postnummer: "25115", postadress: "postaddress15",telefon: "111111115",mobil: "111111115",epostadress: "epostadress15@domain.com",epostadress2: "epostadress15@domain.com",hemkommun: "kommun03",modersmål: "Hindi"},
-      {personnummer: "911111-1116", förnamn: "förnamn16",efternamn: "efternamn16",adress: "adress16",coadress: "coaddress16", postnummer: "25116", postadress: "postaddress16",telefon: "111111116",mobil: "111111116",epostadress: "epostadress16@domain.com",epostadress2: "epostadress16@domain.com",hemkommun: "kommun04",modersmål: "Tamil"},
-      {personnummer: "911111-1117", förnamn: "förnamn17",efternamn: "efternamn17",adress: "adress17",coadress: "coaddress17", postnummer: "25117", postadress: "postaddress17",telefon: "111111117",mobil: "111111117",epostadress: "epostadress17@domain.com",epostadress2: "epostadress17@domain.com",hemkommun: "kommun05",modersmål: "French"},
-      {personnummer: "911111-1118", förnamn: "förnamn18",efternamn: "efternamn18",adress: "adress18",coadress: "coaddress18", postnummer: "25118", postadress: "postaddress18",telefon: "111111118",mobil: "111111118",epostadress: "epostadress18@domain.com",epostadress2: "epostadress18@domain.com",hemkommun: "kommun06",modersmål: "German"},
-      {personnummer: "911111-1119", förnamn: "förnamn19",efternamn: "efternamn19",adress: "adress19",coadress: "coaddress19", postnummer: "25119", postadress: "postaddress19",telefon: "111111119",mobil: "111111119",epostadress: "epostadress19@domain.com",epostadress2: "epostadress19@domain.com",hemkommun: "kommun03",modersmål: "Swedish"},
-      {personnummer: "911111-1120", förnamn: "förnamn20",efternamn: "efternamn20",adress: "adress20",coadress: "coaddress20", postnummer: "25120", postadress: "postaddress20",telefon: "111111120",mobil: "111111120",epostadress: "epostadress20@domain.com",epostadress2: "epostadress20@domain.com",hemkommun: "kommun04",modersmål: "Arabic"},
-      {personnummer: "911111-1121", förnamn: "förnamn21",efternamn: "efternamn21",adress: "adress21",coadress: "coaddress21", postnummer: "25121", postadress: "postaddress21",telefon: "111111121",mobil: "111111121",epostadress: "epostadress21@domain.com",epostadress2: "epostadress21@domain.com",hemkommun: "kommun05",modersmål: "English"},
-      {personnummer: "911111-1122", förnamn: "förnamn22",efternamn: "efternamn22",adress: "adress22",coadress: "coaddress22", postnummer: "25122", postadress: "postaddress22",telefon: "111111122",mobil: "111111122",epostadress: "epostadress22@domain.com",epostadress2: "epostadress22@domain.com",hemkommun: "kommun06",modersmål: "Polish"},
-      {personnummer: "911111-1123", förnamn: "förnamn23",efternamn: "efternamn23",adress: "adress23",coadress: "coaddress23", postnummer: "25123", postadress: "postaddress23",telefon: "111111123",mobil: "111111123",epostadress: "epostadress23@domain.com",epostadress2: "epostadress23@domain.com",hemkommun: "kommun01",modersmål: "Swedish"},
-      {personnummer: "911111-1124", förnamn: "förnamn24",efternamn: "efternamn24",adress: "adress24",coadress: "coaddress24", postnummer: "25124", postadress: "postaddress24",telefon: "111111124",mobil: "111111124",epostadress: "epostadress24@domain.com",epostadress2: "epostadress24@domain.com",hemkommun: "kommun02",modersmål: "English"},
-      {personnummer: "911111-1125", förnamn: "förnamn25",efternamn: "efternamn25",adress: "adress25",coadress: "coaddress25", postnummer: "25125", postadress: "postaddress25",telefon: "111111125",mobil: "111111125",epostadress: "epostadress25@domain.com",epostadress2: "epostadress25@domain.com",hemkommun: "kommun03",modersmål: "Swedish"}
-  ];
-  var listCourse = [
+    {personnummer: "911111-1111", förnamn: "Dimitrij",efternamn: "Aleshkov",adress: "Tranemansgatan 21B",coadress: "coaddress11", postnummer: "25111", postadress: "postaddress11",telefon: "111111111",mobil: "111111111",epostadress: "epostadress11@domain.com",epostadress2: "epostadress11@domain.com",hemkommun: "kommun01",modersmål: "Russian"},
+    {personnummer: "911111-1112", förnamn: "Peter",efternamn: "Danielsson",adress: "adress12",coadress: "coaddress12", postnummer: "25112", postadress: "postaddress12",telefon: "111111112",mobil: "111111112",epostadress: "epostadress12@domain.com",epostadress2: "epostadress12@domain.com",hemkommun: "kommun02",modersmål: "Danish"},
+    {personnummer: "911111-1113", förnamn: "Christian",efternamn: "Orsing",adress: "adress13",coadress: "coaddress13", postnummer: "25113", postadress: "postaddress13",telefon: "111111113",mobil: "111111113",epostadress: "epostadress13@domain.com",epostadress2: "epostadress13@domain.com",hemkommun: "kommun01",modersmål: "Danish"},
+    {personnummer: "911111-1114", förnamn: "Peter",efternamn: "Janson",adress: "adress14",coadress: "coaddress14", postnummer: "25114", postadress: "postaddress14",telefon: "111111114",mobil: "111111114",epostadress: "epostadress14@domain.com",epostadress2: "epostadress14@domain.com",hemkommun: "kommun02",modersmål: "Swedish"},
+    {personnummer: "911111-1115", förnamn: "Lars",efternamn: "Thunberg",adress: "adress15",coadress: "coaddress15", postnummer: "25115", postadress: "postaddress15",telefon: "111111115",mobil: "111111115",epostadress: "epostadress15@domain.com",epostadress2: "epostadress15@domain.com",hemkommun: "kommun03",modersmål: "English"},
+    {personnummer: "911111-1116", förnamn: "Maria",efternamn: "Winberg Nordström",adress: "adress16",coadress: "coaddress16", postnummer: "25116", postadress: "postaddress16",telefon: "111111116",mobil: "111111116",epostadress: "epostadress16@domain.com",epostadress2: "epostadress16@domain.com",hemkommun: "kommun04",modersmål: "Swedish"},
+    {personnummer: "911111-1117", förnamn: "förnamn17",efternamn: "efternamn17",adress: "adress17",coadress: "coaddress17", postnummer: "25117", postadress: "postaddress17",telefon: "111111117",mobil: "111111117",epostadress: "epostadress17@domain.com",epostadress2: "epostadress17@domain.com",hemkommun: "kommun05",modersmål: "French"},
+    {personnummer: "911111-1118", förnamn: "förnamn18",efternamn: "efternamn18",adress: "adress18",coadress: "coaddress18", postnummer: "25118", postadress: "postaddress18",telefon: "111111118",mobil: "111111118",epostadress: "epostadress18@domain.com",epostadress2: "epostadress18@domain.com",hemkommun: "kommun06",modersmål: "German"},
+    {personnummer: "911111-1119", förnamn: "förnamn19",efternamn: "efternamn19",adress: "adress19",coadress: "coaddress19", postnummer: "25119", postadress: "postaddress19",telefon: "111111119",mobil: "111111119",epostadress: "epostadress19@domain.com",epostadress2: "epostadress19@domain.com",hemkommun: "kommun03",modersmål: "Swedish"},
+    {personnummer: "911111-1120", förnamn: "förnamn20",efternamn: "efternamn20",adress: "adress20",coadress: "coaddress20", postnummer: "25120", postadress: "postaddress20",telefon: "111111120",mobil: "111111120",epostadress: "epostadress20@domain.com",epostadress2: "epostadress20@domain.com",hemkommun: "kommun04",modersmål: "Arabic"},
+    {personnummer: "911111-1121", förnamn: "förnamn21",efternamn: "efternamn21",adress: "adress21",coadress: "coaddress21", postnummer: "25121", postadress: "postaddress21",telefon: "111111121",mobil: "111111121",epostadress: "epostadress21@domain.com",epostadress2: "epostadress21@domain.com",hemkommun: "kommun05",modersmål: "English"},
+    {personnummer: "911111-1122", förnamn: "förnamn22",efternamn: "efternamn22",adress: "adress22",coadress: "coaddress22", postnummer: "25122", postadress: "postaddress22",telefon: "111111122",mobil: "111111122",epostadress: "epostadress22@domain.com",epostadress2: "epostadress22@domain.com",hemkommun: "kommun06",modersmål: "Polish"},
+    {personnummer: "911111-1123", förnamn: "förnamn23",efternamn: "efternamn23",adress: "adress23",coadress: "coaddress23", postnummer: "25123", postadress: "postaddress23",telefon: "111111123",mobil: "111111123",epostadress: "epostadress23@domain.com",epostadress2: "epostadress23@domain.com",hemkommun: "kommun01",modersmål: "Swedish"},
+    {personnummer: "911111-1124", förnamn: "förnamn24",efternamn: "efternamn24",adress: "adress24",coadress: "coaddress24", postnummer: "25124", postadress: "postaddress24",telefon: "111111124",mobil: "111111124",epostadress: "epostadress24@domain.com",epostadress2: "epostadress24@domain.com",hemkommun: "kommun02",modersmål: "English"},
+    {personnummer: "911111-1125", förnamn: "förnamn25",efternamn: "efternamn25",adress: "adress25",coadress: "coaddress25", postnummer: "25125", postadress: "postaddress25",telefon: "111111125",mobil: "111111125",epostadress: "epostadress25@domain.com",epostadress2: "epostadress25@domain.com",hemkommun: "kommun03",modersmål: "Swedish"}
+    ];
+    var listCourse = [
       {grupp: "särskilt" ,kurs: "Stöd AD", skol: "Vuxenutbildningen", kurskod: "STA", skolkurskod: "Stöd - diagnos",           år: 2020, fråntilldatum: "30 Dec 2019 - 3 Jan 2021", poang: 0, studietakt: "Dag"},
       {grupp: "särskilt", kurs: "Stöd dy", skol: "Vuxenutbildningen", kurskod: "DYD", skolkurskod: "Stöd - läs o skriv",       år: 2020, fråntilldatum: "30 Dec 2019 - 3 Jan 2021", poang: 0, studietakt: "Dag"},
       {grupp: "särskilt", kurs: "Stöd ma", skol: "Vuxenutbildningen", kurskod: "DYM", skolkurskod: "Stöd - matematik",         år: 2020, fråntilldatum: "30 Dec 2019 - 3 Jan 2021", poang: 0, studietakt: "Dag"},
@@ -292,7 +334,7 @@ function openHelp() {
       document.getElementById("courses").innerHTML = txt;
     
   }
-  
+ 
   // stack handling
   function Stack(array) {
       this.array = [];
@@ -387,8 +429,7 @@ function kontaktföregående() {
 }
 
 function kontaktnästabtn() {
- document.querySelector(".info-container").style.display = "none";
- document.getElementById("skickain-information").style.display = "block";
+ /* document.querySelector(".info-container").style.display = "none"; */
 }
 
 function visastudieplan() {
