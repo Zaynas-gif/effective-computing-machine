@@ -109,7 +109,7 @@ function loadList(persId) {
 
 function visaKontakt() {
     var txt = document.getElementById("fname").innerHTML + " " + document.getElementById("lname").innerHTML + " " +
-    document.getElementById("adress").innerHTML + " " + document.getElementById("coadress").innderHTML + "  " +
+    document.getElementById("adress").innerHTML + " " + document.getElementById("coadress").innerHTML + "  " +
     document.getElementById("postnummer").innerHTML + " " + document.getElementById("postadress").innerHTML + " " +
     document.getElementById("telefon").innerHTML + " " + document.getElementById("mobil").innerHTML;
     document.getElementById("sökande-skickain").innerHTML = txt;
@@ -118,7 +118,7 @@ function visaKontakt() {
     document.getElementById("studiemedeld").innerHTML = document.getElementById("stud-sel").value;
     document.getElementById("nuvarandesys").innerHTML = document.getElementById("sys-sel").value;
     document.getElementById("stdtakt").innerHTML = document.getElementById("takt-sel").value;
-    document.getElementById("start").innerHTML = document.getElementById("startdatum").innerHTML;
+    document.getElementById("start").innerHTML = document.getElementById("startdatum").value;
     document.getElementById("motkomment").innerHTML = document.getElementById("Motivera").value;
     document.getElementById("sarstod").innerHTML = document.getElementById("sarskilt").value;
     document.getElementById("utbmal").innerHTML = document.getElementById("Utbildningsmal").value;
