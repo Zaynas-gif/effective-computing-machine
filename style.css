@@ -672,9 +672,9 @@ caption {
     line-height: 12px;
     position: relative;
 }
-.info-container {
-    width: 350px;
-    height: auto;
+.info-container p{
+    margin-bottom: 15px;
+    
 }
 .courselist-container {
     width: 60%;
@@ -715,7 +715,18 @@ caption {
     padding-left: 10px;
     border-radius: 5px;
     width: 170px;
+    }
+
+#modersmal {
+    background: linear-gradient(180deg, rgba(89,190,255,1) 0%, rgba(34,167,255,1) 20%, #009bff 40%, rgba(0,155,255,1) 60%, rgba(34,167,255,1) 80%, rgba(89,190,255,1) 100%);
+    border-radius: 0px;
+    color: white;
 }
+
+#breadkontakt {
+    margin-bottom: 20px;
+}
+
 .required-star {
     display: inline-block;
     position: absolute;
