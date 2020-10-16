@@ -445,6 +445,7 @@ function Gavidare() {
   document.querySelector(".komplettera-content").style.display = "block";
   document.querySelector(".gå-vidare").style.display = "none";
   document.querySelector(".tillbaka-korg").style.display = "block";
+  document.querySelector(".skickain-information").style.display = "none";
 }
 
 function tillbakakorg() {
@@ -454,17 +455,20 @@ function tillbakakorg() {
   document.querySelector(".gå-vidare").style.display = "block";
   document.querySelector(".tillbaka-korg").style.display = "none";
   document.querySelector(".info-container").style.display = "none";
+  document.querySelector(".skickain-information").style.display = "none";
 }
 
 function komplnästabtn() {
   document.querySelector(".komplettera-content").style.display = "none";
   document.querySelector(".info-container").style.display = "block";
+  document.querySelector(".skickain-information").style.display = "none";
 }
 
 
 function kontaktföregående() {
   document.querySelector(".komplettera-content").style.display = "block";
   document.querySelector(".info-container").style.display = "none";
+  document.querySelector(".skickain-information").style.display = "none";
 }
 
 function kontaktnästabtn() {
