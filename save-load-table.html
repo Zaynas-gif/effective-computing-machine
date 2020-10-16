@@ -14,14 +14,14 @@ var x, txt = "";
 
 //Function to save array in local storage
 function saveList() {
-    var persKurs = [{persId: "911111-1119", skolKursId: "PRRPRR01"},
-                    {persId: "911111-1119", skolKursId: "PRRPRR01"},
+    var persKurs = [{persId: "911111-1116", skolKursId: "PRRPRR01"},
+                    {persId: "911111-1116", skolKursId: "PRRPRR01"},
                     {persId: "911111-1117", skolKursId: "PRRPRR01"},
                     {persId: "911111-1125", skolKursId: "PRRPRR01"}
                     ];
-    var persDetails =  [{persId: "911111-1119", telefon: "111111120",mobil: "111111220",epostadress: "epostadress20@domain.com",epostadress2: "epostadress20@domain.se",modersmål: "Arabic", tidutdSel:"", utbInput:"", sysSel:"", annatInput:"", studInput:"", utbsysSel:"", kursInput:"", yrkeInput:"", studSel:"",taktSel:"", startDatum: "", motivera:"", särskilt:"" , utbildningsmål:""},
-                        {persId: "911111-1117", telefon: "111111117",mobil: "111111217",epostadress: "epostadress17@domain.com",epostadress2: "epostadress17@domain.se",modersmål: "German", tidutdSel:"", utbInput:"", sysSel:"", annatInput:"", studInput:"", utbsysSel:"", kursInput:"", yrkeInput:"", studSel:"",taktSel:"", startDatum: "", motivera:"", särskilt:"" , utbildningsmål:""},
-                        {persId: "911111-1125", telefon: "111111125",mobil: "111111225",epostadress: "epostadress25@domain.com",epostadress2: "epostadress25@domain.se",modersmål: "Swedish", tidutdSel:"", utbInput:"", sysSel:"", annatInput:"", studInput:"", utbsysSel:"", kursInput:"", yrkeInput:"", studSel:"",taktSel:"", startDatum: "", motivera:"", särskilt:"" , utbildningsmål:""}
+    var persDetails =  [{persId: "911111-1116", telefon: "111111120",mobil: "111111220",epostadress: "epostadress20@domain.com",epostadress2: "epostadress20@domain.se",modersmal: "Arabic", tidutbSel:"", utbInput:"", sysSel:"", annatInput:"", studInput:"", utbsysSel:"", kursInput:"", yrkeInput:"", studSel:"",taktSel:"", startDatum: "", motivera:"", sarskilt:"" , utbildningsmal:""},
+                        {persId: "911111-1117", telefon: "111111117",mobil: "111111217",epostadress: "epostadress17@domain.com",epostadress2: "epostadress17@domain.se",modersmal: "German", tidutbSel:"", utbInput:"", sysSel:"", annatInput:"", studInput:"", utbsysSel:"", kursInput:"", yrkeInput:"", studSel:"",taktSel:"", startDatum: "", motivera:"", sarskilt:"" , utbildningsmal:""},
+                        {persId: "911111-1125", telefon: "111111125",mobil: "111111225",epostadress: "epostadress25@domain.com",epostadress2: "epostadress25@domain.se",modersmal: "Swedish", tidutbSel:"", utbInput:"", sysSel:"", annatInput:"", studInput:"", utbsysSel:"", kursInput:"", yrkeInput:"", studSel:"",taktSel:"", startDatum: "", motivera:"", sarskilt:"" , utbildningsmal:""}
                     ];
     var jsonArray1 = JSON.stringify(persKurs);
     var jsonArray2 = JSON.stringify(persDetails);
@@ -43,14 +43,15 @@ function loadList() {
 
     txt = "<table width=700px; border='1'>"
     for (x in detailsObj) {
+        console.log(x);
         txt +=  "<tr><td>" + detailsObj[x].persId + 
                 "</td><td>"+ detailsObj[x].telefon +
                 "</td><td>"+ detailsObj[x].mobil +
                 "</td><td>"+ detailsObj[x].epostadress +
                 "</td><td>"+ detailsObj[x].epostadress2 +
-                "</td><td>"+ detailsObj[x].modersmål +
-                "</td><td>"+ detailsObj[x].tidutdSel +
-                "</td><td>"+ detailsObj[x].utdInput +
+                "</td><td>"+ detailsObj[x].modersmal +
+                "</td><td>"+ detailsObj[x].tidutbSel +
+                "</td><td>"+ detailsObj[x].utbInput +
                 "</td><td>"+ detailsObj[x].sysSel +
                 "</td><td>"+ detailsObj[x].annatInput +
                 "</td><td>"+ detailsObj[x].studInput +
@@ -61,13 +62,14 @@ function loadList() {
                 "</td><td>"+ detailsObj[x].taktSel +
                 "</td><td>"+ detailsObj[x].startDatum +
                 "</td><td>"+ detailsObj[x].motivera +
-                "</td><td>"+ detailsObj[x].särskilt +
-                "</td><td>"+ detailsObj[x].utbildningsmål +
+                "</td><td>"+ detailsObj[x].sarskilt +
+                "</td><td>"+ detailsObj[x].utbildningsmal +
             "</td></tr>";
+            console.log(txt);
     }
     txt += "</table>"    
     document.getElementById("person-details").innerHTML = txt;
-
+/*
     shortList = coursesObj.filter(minilist => {return minilist.persId.includes("911111-1119");});
     txt = "<table width=300px; border='1'>"
     for (x in shortList) {
@@ -84,9 +86,9 @@ function loadList() {
                 "</td><td>"+ detailsObj[x].mobil +
                 "</td><td>"+ detailsObj[x].epostadress +
                 "</td><td>"+ detailsObj[x].epostadress2 +
-                "</td><td>"+ detailsObj[x].modersmål +
-                "</td><td>"+ detailsObj[x].tidutdSel +
-                "</td><td>"+ detailsObj[x].utdInput +
+                "</td><td>"+ detailsObj[x].modersmal +
+                "</td><td>"+ detailsObj[x].tidutbSel +
+                "</td><td>"+ detailsObj[x].utbInput +
                 "</td><td>"+ detailsObj[x].sysSel +
                 "</td><td>"+ detailsObj[x].annatInput +
                 "</td><td>"+ detailsObj[x].studInput +
@@ -99,7 +101,7 @@ function loadList() {
             "</td></tr>";
     }
     txt += "</table>"    
-    document.getElementById("filter-details").innerHTML = txt;
+    document.getElementById("filter-details").innerHTML = txt;*/
 }
 saveList();
 loadList();
