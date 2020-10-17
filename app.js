@@ -471,6 +471,13 @@ function kontaktföregående() {
   document.querySelector(".skickain-information").style.display = "none";
 }
 
+function kontaktföregående2() {
+  document.querySelector(".skickain-information").style.display = "none";
+  document.querySelector(".info-container").style.display = "block";
+}
+
+
+
 function kontaktnästabtn() {
   document.querySelector(".info-container").style.display = "none";
   document.querySelector(".skickain-information").style.display = "block";
