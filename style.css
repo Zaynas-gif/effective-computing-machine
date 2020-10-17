@@ -754,6 +754,7 @@ caption {
     min-height: 300px;
     color: black;
     text-align: left;
+    background-color: whitesmoke;
 }
 #korg {
     border: 0;
@@ -798,4 +799,15 @@ table {
 th, td {
     text-align: left;
     padding: 8px;
+}
+
+
+.myselect-background{
+    
+    color:white;
+    font-size: 20px;
+    height: 30px;
+    text-align: center;
+   margin-left: 0px;
+    background: linear-gradient(180deg, rgba(89,190,255,1) 0%, rgba(34,167,255,1) 20%, #009bff 40%, rgba(0,155,255,1) 60%, rgba(34,167,255,1) 80%, rgba(89,190,255,1) 100%);
 }
